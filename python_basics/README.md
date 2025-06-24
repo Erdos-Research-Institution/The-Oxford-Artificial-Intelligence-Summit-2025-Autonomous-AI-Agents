@@ -1,3 +1,16 @@
+## Virtual Environment
+This project uses a global virtual environment (`tutor_venv`) shared by all topics.
+
+- The automation scripts (`setup_and_run.bat` and `setup_and_run.sh`) will:
+  - Check if `tutor_venv` exists at the root of the repository.
+  - If not, create it and activate it.
+  - Install dependencies from `requirements.txt`.
+  - Launch the Streamlit app.
+
+You do not need to manually create or activate the virtual environment—just run the setup script for your OS!
+
+---
+
 # Python Basics: Streamlit Tutorial
 
 This folder contains a beginner-friendly tutorial and an interactive Streamlit app covering:
@@ -40,17 +53,6 @@ These scripts will set up the global virtual environment, install dependencies, 
 2. Go to [Streamlit Community Cloud](https://streamlit.io/cloud).
 3. Click "New app", connect your GitHub repo, and select the branch and `python_basics/streamlit_app/app.py` as the main file.
 4. Click "Deploy". Streamlit Cloud will install dependencies from `requirements.txt` and launch your app.
-
-## Virtual Environment
-This project uses a global virtual environment (`tutor_venv`) shared by all topics.
-
-- The automation scripts (`setup_and_run.bat` and `setup_and_run.sh`) will:
-  - Check if `tutor_venv` exists at the root of the repository.
-  - If not, create it and activate it.
-  - Install dependencies from `requirements.txt`.
-  - Launch the Streamlit app.
-
-You do not need to manually create or activate the virtual environment—just run the setup script for your OS!
 
 ---
 
