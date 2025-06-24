@@ -1,0 +1,19 @@
+# Ignore global Python virtual environment
+/tutor_venv/
+
+# Ignore all FAISS and vectorstore files
+**/faiss_index*
+**/vectorstore*
+**/*.pkl
+**/*.db
+**/*.npy
+**/*.npz
+
+# Ignore Streamlit cache and temp files
+**/.streamlit/
+**/.cache/
+**/__pycache__/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
