@@ -36,3 +36,13 @@ y = np.array([2, 4, 6, 8])
 model = LinearRegression()
 model.fit(X, y)
 print("Predicted value for 5:", model.predict([[5]]))
+
+# Plotting the regression result
+plt.scatter(X, y, color='blue', label='Actual')
+plt.plot(X, model.predict(X), color='red', label='Regression Line')
+plt.scatter([5], model.predict([[5]]), color='green', label='Prediction for 5')
+plt.title("Linear Regression Fit")
+plt.xlabel("X")
+plt.ylabel("y")
+plt.legend()
+plt.show()

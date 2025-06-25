@@ -17,7 +17,10 @@ st.markdown("""
 """)
 
 st.header("Pandas DataFrame Example")
-data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+num_records = st.slider("Number of records", min_value=1, max_value=10, value=3)
+names = [f"Person {i+1}" for i in range(num_records)]
+ages = [st.number_input(f"Age for {names[i]}", min_value=0, max_value=120, value=25 + i*5, key=f"age_{i}") for i in range(num_records)]
+data = {'Name': names, 'Age': ages}
 df = pd.DataFrame(data)
 st.write(df)
 
