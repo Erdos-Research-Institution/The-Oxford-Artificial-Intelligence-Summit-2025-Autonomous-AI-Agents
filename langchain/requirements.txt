@@ -3,3 +3,9 @@ langchain
 fastapi
 uvicorn
 openai
+langchain_community
+python-dotenv
+tiktoken
+faiss-cpu
+pydantic
+

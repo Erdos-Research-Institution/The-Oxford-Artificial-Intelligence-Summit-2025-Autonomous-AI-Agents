@@ -19,6 +19,15 @@ This folder contains a beginner-friendly tutorial and an interactive Streamlit a
 - RAG (Retrieval Augmented Generation)
 - FastAPI backend (connect with Streamlit frontend)
 
+## Setting Up OpenAI API Key
+
+1. Create a file named `.env` in this folder.
+2. Add your OpenAI API key to the file like this:
+   ```
+   OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ```
+3. Your API key will be loaded automatically by the backend and tutorial code. You can also enter it in the Streamlit app for temporary use.
+
 ## Getting Started Locally
 
 1. **Open a terminal in this folder (`langchain`).**

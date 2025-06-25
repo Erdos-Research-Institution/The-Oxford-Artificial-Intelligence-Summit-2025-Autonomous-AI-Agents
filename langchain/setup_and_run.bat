@@ -1,10 +1,10 @@
 @echo off
 REM This script sets up a global virtual environment and runs the Streamlit app for Langchain AI Agent
-set VENV_DIR=..\..\..\tutor_venv
+set VENV_DIR=..\tutor_venv
 if not exist %VENV_DIR% (
     python -m venv %VENV_DIR%
 )
 call %VENV_DIR%\Scripts\activate.bat
 pip install -r requirements.txt
-start cmd /k uvicorn api:app --reload
+start cmd /k uvicorn api:app --reload --host localhost --port 8005
 streamlit run app.py
