@@ -6,4 +6,4 @@ if not exist %VENV_DIR% (
 )
 call %VENV_DIR%\Scripts\activate.bat
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app/app.py

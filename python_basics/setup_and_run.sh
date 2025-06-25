@@ -6,4 +6,4 @@ if [ ! -d "$VENV_DIR" ]; then
 fi
 source "$VENV_DIR/bin/activate"
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app/app.py
