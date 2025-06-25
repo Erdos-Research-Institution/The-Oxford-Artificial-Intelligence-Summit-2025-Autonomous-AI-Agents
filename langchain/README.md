@@ -5,7 +5,7 @@ This project uses a global virtual environment (`tutor_venv`) shared by all topi
   - Check if `tutor_venv` exists at the root of the repository.
   - If not, create it and activate it.
   - Install dependencies from `requirements.txt`.
-  - Launch the FastAPI backend and Streamlit app.
+  - Launch the Streamlit app.
 
 You do not need to manually create or activate the virtual environment—just run the setup script for your OS!
 
@@ -21,38 +21,77 @@ This folder contains a beginner-friendly tutorial and an interactive Streamlit a
 
 ## Getting Started Locally
 
-1. **Open a terminal in this folder (`langchain/streamlit_app`).**
+1. **Open a terminal in this folder (`langchain`).**
 2. **Run the automation script:**
    - On Windows: Double-click `setup_and_run.bat` or run it in the terminal.
    - On Mac/Linux: Run `bash setup_and_run.sh` in the terminal.
 
-These scripts will set up the global virtual environment, install dependencies, launch the FastAPI backend, and start the Streamlit app automatically.
+These scripts will set up the global virtual environment, install dependencies, and launch the Streamlit app automatically.
 
-## Manual Setup (Alternative)
-1. Create and activate the virtual environment manually (optional, since scripts do this):
-   ```
-   python -m venv ../../tutor_venv
-   # On Windows:
-   ..\..\tutor_venv\Scripts\activate.bat
-   # On Mac/Linux:
-   source ../../tutor_venv/bin/activate
-   ```
-2. Install dependencies:
+---
+
+## Manual Usage
+
+1. **Activate the virtual environment:**
+   - On Windows:
+     ```
+     ..\tutor_venv\Scripts\activate
+     ```
+   - On Mac/Linux:
+     ```
+     source ../tutor_venv/bin/activate
+     ```
+2. **Install dependencies:**
    ```
    pip install -r requirements.txt
    ```
-3. Start the FastAPI backend:
+3. **Run the tutorial code:**
+   ```
+   python tutorial_code.py
+   ```
+4. **Run the FastAPI backend:**
    ```
    uvicorn api:app --reload
    ```
-4. In a new terminal, run the Streamlit app:
+5. **Run the Streamlit app:**
    ```
    streamlit run app.py
    ```
 
-## Deploying on Streamlit Community Cloud
-- Note: Streamlit Community Cloud does not support running FastAPI and Streamlit together. For full-stack deployment, use a cloud provider like Azure, AWS, or Heroku.
+---
+
+## File Structure
+
+- `app.py` — Main Streamlit app
+- `api.py` — FastAPI backend
+- `requirements.txt` — Python dependencies
+- `setup_and_run.bat` — Windows automation script
+- `setup_and_run.sh` — Mac/Linux automation script
+- `tutorial_code.py` — Additional tutorial code
+
+## Pushing This Folder to Your GitHub Account
+
+1. Create a new repository on [GitHub](https://github.com/new) (do not initialize with a README or .gitignore).
+2. Open a terminal in this folder (`langchain`).
+3. Run the following commands:
+   ```sh
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git push -u origin main
+   ```
+4. Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and repository name.
 
 ---
 
-Enjoy building AI agents with Langchain!
+## Deploying on Streamlit Community Cloud
+1. Push your repo to GitHub.
+2. Go to [Streamlit Community Cloud](https://streamlit.io/cloud).
+3. Click "New app", connect your GitHub repo, and select the branch and `langchain/app.py` as the main file.
+4. Click "Deploy". Streamlit Cloud will install dependencies from `requirements.txt` and launch your app.
+
+---
+
+Enjoy learning about Langchain and AI Agents interactively!

@@ -20,35 +20,70 @@ This folder contains a beginner-friendly tutorial and an interactive Streamlit a
 
 ## Getting Started Locally
 
-1. **Open a terminal in this folder (`svm/streamlit_app`).**
+1. **Open a terminal in this folder (`svm`).**
 2. **Run the automation script:**
    - On Windows: Double-click `setup_and_run.bat` or run it in the terminal.
    - On Mac/Linux: Run `bash setup_and_run.sh` in the terminal.
 
 These scripts will set up the global virtual environment, install dependencies, and launch the Streamlit app automatically.
 
-## Manual Setup (Alternative)
-1. Create and activate the virtual environment manually (optional, since scripts do this):
-   ```
-   python -m venv ../../tutor_venv
-   # On Windows:
-   ..\..\tutor_venv\Scripts\activate.bat
-   # On Mac/Linux:
-   source ../../tutor_venv/bin/activate
-   ```
-2. Install dependencies:
+---
+
+## Manual Usage
+
+1. **Activate the virtual environment:**
+   - On Windows:
+     ```
+     ..\tutor_venv\Scripts\activate
+     ```
+   - On Mac/Linux:
+     ```
+     source ../tutor_venv/bin/activate
+     ```
+2. **Install dependencies:**
    ```
    pip install -r requirements.txt
    ```
-3. Run the app:
+3. **Run the tutorial code:**
+   ```
+   python tutorial_code.py
+   ```
+4. **Run the Streamlit app:**
    ```
    streamlit run app.py
    ```
 
+---
+
+## File Structure
+
+- `app.py` — Main Streamlit app
+- `requirements.txt` — Python dependencies
+- `setup_and_run.bat` — Windows automation script
+- `setup_and_run.sh` — Mac/Linux automation script
+- `tutorial_code.py` — Additional tutorial code
+
+## Pushing This Folder to Your GitHub Account
+
+1. Create a new repository on [GitHub](https://github.com/new) (do not initialize with a README or .gitignore).
+2. Open a terminal in this folder (`svm`).
+3. Run the following commands:
+   ```sh
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git push -u origin main
+   ```
+4. Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and repository name.
+
+---
+
 ## Deploying on Streamlit Community Cloud
 1. Push your repo to GitHub.
 2. Go to [Streamlit Community Cloud](https://streamlit.io/cloud).
-3. Click "New app", connect your GitHub repo, and select the branch and `svm/streamlit_app/app.py` as the main file.
+3. Click "New app", connect your GitHub repo, and select the branch and `svm/app.py` as the main file.
 4. Click "Deploy". Streamlit Cloud will install dependencies from `requirements.txt` and launch your app.
 
 ---
