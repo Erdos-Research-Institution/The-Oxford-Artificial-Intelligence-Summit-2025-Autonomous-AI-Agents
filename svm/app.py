@@ -38,15 +38,23 @@ if st.button("Train SVM"):
     y_pred = clf.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
     st.success(f"Accuracy: {acc:.2f}")
-    st.text("Classification Report:")
-    st.text(classification_report(y_test, y_pred))
+    st.text("Classification Report (per-class only):")
+    # Remove macro avg and weighted avg from the report
+    report = classification_report(y_test, y_pred, output_dict=True)
+    report_str = ""
+    for label in iris.target_names:
+        if label in report:
+            metrics = report[label]
+            report_str += f"{label}: precision={metrics['precision']:.2f}, recall={metrics['recall']:.2f}, f1-score={metrics['f1-score']:.2f}\n"
+    st.text(report_str)
     st.text("Confusion Matrix:")
     st.write(confusion_matrix(y_test, y_pred))
     # Plot
     fig, ax = plt.subplots()
-    ax.scatter(X_test[:, 0], X_test[:, 1], c=y_pred, cmap='viridis', marker='o', label='Predicted')
-    ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap='cool', marker='x', label='True')
+    scatter1 = ax.scatter(X_test[:, 0], X_test[:, 1],  color='blue', marker='o', label='Predicted')
+    scatter2 = ax.scatter(X_test[:, 0], X_test[:, 1],  color='red', marker='x', label='True')
     ax.set_xlabel(iris.feature_names[0])
     ax.set_ylabel(iris.feature_names[1])
-    ax.legend(["Predicted", "True"])
+    ax.legend([scatter1, scatter2], ["Predicted ", "True"])
     st.pyplot(fig)
+    st.caption("In the scatter plot, color represents the class label: 'Predicted' uses predicted class, 'True' uses true class.")
